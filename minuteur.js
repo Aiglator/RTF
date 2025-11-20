@@ -8,7 +8,8 @@ function startTimer() {
   timeLeft = 20;
   updateTimerDisplay();
  
-  timerInterval = setInterval(() => {
-  timeLeft--;
+    timerInterval = setInterval(() => {
+    timeLeft--;
+    updateTimerDisplay();
   }, 1000);
 }
