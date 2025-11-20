@@ -4,4 +4,6 @@ let timerInterval;
 
 function startTimer() {
   clearInterval(timerInterval);
+ 
+  timeLeft = 20;
 }
