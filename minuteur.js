@@ -6,4 +6,5 @@ function startTimer() {
   clearInterval(timerInterval);
  
   timeLeft = 20;
+  updateTimerDisplay();
 }
