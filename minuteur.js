@@ -9,5 +9,6 @@ function startTimer() {
   updateTimerDisplay();
  
   timerInterval = setInterval(() => {
+  timeLeft--;
   }, 1000);
 }
