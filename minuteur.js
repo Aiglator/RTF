@@ -14,6 +14,7 @@ function startTimer() {
    
     if (timeLeft <= 0) {
       clearInterval(timerInterval);
+      console.log("Temps écoulé !");
     }
   }, 1000);
 }
