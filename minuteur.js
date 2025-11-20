@@ -22,4 +22,5 @@ function startTimer() {
 function updateTimerDisplay() {
   const minutes = Math.floor(timeLeft / 60).toString().padStart(2, "0");
   const seconds = (timeLeft % 60).toString().padStart(2, "0");
+  timerElement.textContent = `${minutes}:${seconds}`;
 }
