@@ -24,3 +24,5 @@ function updateTimerDisplay() {
   const seconds = (timeLeft % 60).toString().padStart(2, "0");
   timerElement.textContent = `${minutes}:${seconds}`;
 }
+
+// Démarre le timer à l'ouverture de la page
