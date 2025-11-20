@@ -3,4 +3,5 @@ const timerElement = document.getElementById("timer");
 let timerInterval;
 
 function startTimer() {
+  clearInterval(timerInterval);
 }
