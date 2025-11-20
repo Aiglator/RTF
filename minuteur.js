@@ -7,4 +7,7 @@ function startTimer() {
  
   timeLeft = 20;
   updateTimerDisplay();
+ 
+  timerInterval = setInterval(() => {
+  }, 1000);
 }
