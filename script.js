@@ -108,7 +108,13 @@ function viewquestion(){
         answer: "Paris"
     }
     ];
-
+    questions.forEach(element => {
+        console.log(element.question);
+        element.choices.forEach(choice => {
+            console.log(" - " + choice);
+        });
+        
+    });
 
 
 
