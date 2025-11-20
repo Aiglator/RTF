@@ -13,6 +13,7 @@ function startTimer() {
     updateTimerDisplay();
    
     if (timeLeft <= 0) {
+      clearInterval(timerInterval);
     }
   }, 1000);
 }
