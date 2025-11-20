@@ -26,3 +26,4 @@ function updateTimerDisplay() {
 }
 
 // Démarre le timer à l'ouverture de la page
+startTimer();
