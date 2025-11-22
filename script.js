@@ -9,6 +9,7 @@ function checkAnswer(userAnswer,correctAnswer,explanation,buttonElement) {
         buttonElement.classList.add("btn-success");
         feedbackDiv.innerHTML = "";
     }else {
+        buttonElement.classList.remove("btn-outline-primary");
     }
 
 }
