@@ -15,6 +15,11 @@ function startTimer() {
     if (timeLeft <= 0) {
       clearInterval(timerInterval);
       console.log("Temps écoulé !");
+      //afficher la question suivante code ajouter par Rayan pour connecter minuteur.js a script.js code assez simple 
+      currentIndex++;
+      if (currentIndex < questions.length) {
+          viewquestion();
+      }
     }
   }, 1000);
 }
