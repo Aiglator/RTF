@@ -10,6 +10,7 @@ function checkAnswer(userAnswer,correctAnswer,explanation,buttonElement) {
         feedbackDiv.innerHTML = "";
     }else {
         buttonElement.classList.remove("btn-outline-primary");
+        buttonElement.classList.add("btn-danger");
     }
 
 }
