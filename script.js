@@ -148,6 +148,10 @@ const element = questions[currentIndex];
 document.querySelector("h3").textContent = element.question;
 document.querySelector("#feedback").innerHTML = "";
 indexButton = 0;
+// Connections pour redémarrer le timer à chaque nouvelle question feature: Rayan Chattaoui j'ai fait ceci pour connecter les deux fichiers
+if (typeof startTimer === 'function') {
+    startTimer();
+}
 
 element.choices.forEach(choice => {
     button[indexButton].textContent = choice;
@@ -155,6 +159,12 @@ element.choices.forEach(choice => {
     button[indexButton].classList.add("btn-outline-primary");
     button[indexButton].onclick = (e) => {
         e.preventDefault();
+
+        // Arrêter le minuteur quand l'utilisateur répond
+        if (typeof timerInterval !== 'undefined') {
+            clearInterval(timerInterval);
+        }
+
         checkAnswer(choice, element.answer, element.explicatifAnswer, e.currentTarget);
         setTimeout(() => {
             currentIndex++;
@@ -168,3 +178,4 @@ element.choices.forEach(choice => {
 
 }
 viewquestion();
+
