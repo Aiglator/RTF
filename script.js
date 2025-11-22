@@ -143,14 +143,7 @@ const questions = [
 
 function viewquestion(){
 
-
-//affiche les questions une par une en mode aléatoire {
-    questions.forEach(element => {
-        console.log(element.question);
-        element.choices.forEach(choice => {
-            console.log(" - " + choice);
-        });
-    });
+const button = document.querySelectorAll("button[data-value]");
 
 }
 viewquestion();
