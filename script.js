@@ -34,7 +34,11 @@ function changeNumberOfQuestions(){
     const changenumberofQuestions = document.getElementById("changenumberofQuestions");
     changenumberofQuestions.textContent = `Question ${currentIndex + 1} sur ${questions.length}`;
 }
-
+function bluechangequestion(){
+    const bluechange = document.getElementById("bluechange");
+    const progressPercentage = ((currentIndex)/questions.length)*100;
+    bluechange.style.width= `${progressPercentage}%`;
+}
 function viewquestion(){
 
 const button = document.querySelectorAll("button[data-value]");
@@ -43,6 +47,7 @@ document.querySelector("h3").textContent = element.question;
 document.querySelector("#feedback").innerHTML = "";
 indexButton = 0;
 changeNumberOfQuestions();
+bluechangequestion();
 // Connections pour redémarrer le timer à chaque nouvelle question feature: Rayan Chattaoui j'ai fait ceci pour connecter les deux fichiers
 if (typeof startTimer === 'function') {
     startTimer();
