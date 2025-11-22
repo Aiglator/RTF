@@ -130,7 +130,5 @@ function viewquestion(){
         
     });
 
-
-
 }
 viewquestion();
