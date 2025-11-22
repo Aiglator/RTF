@@ -179,3 +179,5 @@ element.choices.forEach(choice => {
 }
 viewquestion();
 
+function fetchjsonQuestions(){
+}
