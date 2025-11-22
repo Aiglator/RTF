@@ -15,6 +15,9 @@ function checkAnswer(userAnswer,correctAnswer,explanation,buttonElement) {
     }
 }
 
+let currentIndex = 0;
+let indexButton = 0;
+
 function viewquestion(){
 
 
