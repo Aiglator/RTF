@@ -180,4 +180,11 @@ element.choices.forEach(choice => {
 viewquestion();
 
 function fetchjsonQuestions(){
+    fetch('questions.json')
+    .then(response => response.json())
+    .then(news => {
+        questions = news;
+        viewquestion();
+    })
+    .catch(error => console.error('Erreur lors du chargement des questions :', error));
 }
