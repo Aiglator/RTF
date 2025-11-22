@@ -149,5 +149,12 @@ document.querySelector("h3").textContent = element.question;
 document.querySelector("#feedback").innerHTML = "";
 indexButton = 0;
 
+element.choices.forEach(choice => {
+    button[indexButton].textContent = choice;
+    button[indexButton].classList.remove("btn-success","btn-danger");
+    button[indexButton].classList.add("btn-outline-primary");
+    indexButton++;
+});
+
 }
 viewquestion();
