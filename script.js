@@ -153,6 +153,16 @@ element.choices.forEach(choice => {
     button[indexButton].textContent = choice;
     button[indexButton].classList.remove("btn-success","btn-danger");
     button[indexButton].classList.add("btn-outline-primary");
+    button[indexButton].onclick = (e) => {
+        e.preventDefault();
+        checkAnswer(choice, element.answer, element.explicatifAnswer, e.currentTarget);
+        setTimeout(() => {
+            currentIndex++;
+            if(currentIndex < questions.length) {
+                viewquestion();
+            }
+        }, 2000);
+    };
     indexButton++;
 });
 
