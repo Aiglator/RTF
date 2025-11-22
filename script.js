@@ -127,7 +127,6 @@ function viewquestion(){
         element.choices.forEach(choice => {
             console.log(" - " + choice);
         });
-        
     });
 
 }
