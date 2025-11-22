@@ -5,6 +5,8 @@
 function checkAnswer(userAnswer,correctAnswer,explanation,buttonElement) {
     const feedbackDiv = document.querySelector("#feedback");
     if(userAnswer===correctAnswer) {
+        buttonElement.classList.remove("btn-outline-primary");
+
     }
 
 }
