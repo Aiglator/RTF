@@ -144,6 +144,10 @@ const questions = [
 function viewquestion(){
 
 const button = document.querySelectorAll("button[data-value]");
+const element = questions[currentIndex];
+document.querySelector("h3").textContent = element.question;
+document.querySelector("#feedback").innerHTML = "";
+indexButton = 0;
 
 }
 viewquestion();
