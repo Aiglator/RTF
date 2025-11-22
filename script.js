@@ -7,7 +7,7 @@ function checkAnswer(userAnswer,correctAnswer,explanation,buttonElement) {
     if(userAnswer===correctAnswer) {
         buttonElement.classList.remove("btn-outline-primary");
         buttonElement.classList.add("btn-success");
-
+        feedbackDiv.innerHTML = "";
     }
 
 }
