@@ -14,6 +14,7 @@ function checkAnswer(userAnswer,correctAnswer,explanation,buttonElement) {
         feedbackDiv.innerHTML = "<div class='alert alert-danger mt-3'><strong>Mauvaise réponse !</strong><br>La bonne réponse était : "+correctAnswer+"<br>Explication : "+explanation+"</div>";
     }
 }
+
 //fetch les question de questions.json Author:Rayan Chattaoui je l'ai mis en bas il a pas était appeller je le mets en haut
 function fetchjsonQuestions(){
     fetch('questions.json')
@@ -29,6 +30,10 @@ let currentIndex = 0;
 let indexButton = 0;
 let questions = [];
 
+function changeNumberOfQuestions(){
+    const changenumberofQuestions = document.getElementById("changenumberofQuestions");
+    changenumberofQuestions.textContent = `Question ${currentIndex + 1} sur ${questions.length}`;
+}
 
 function viewquestion(){
 
@@ -37,6 +42,7 @@ const element = questions[currentIndex];
 document.querySelector("h3").textContent = element.question;
 document.querySelector("#feedback").innerHTML = "";
 indexButton = 0;
+changeNumberOfQuestions();
 // Connections pour redémarrer le timer à chaque nouvelle question feature: Rayan Chattaoui j'ai fait ceci pour connecter les deux fichiers
 if (typeof startTimer === 'function') {
     startTimer();
@@ -66,5 +72,5 @@ element.choices.forEach(choice => {
 });
 
 }
-viewquestion();
+
 
