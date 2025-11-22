@@ -4,6 +4,8 @@
 // AUthor: Rayan et Thomas CheckAnswer peer to peer programming
 function checkAnswer(userAnswer,correctAnswer,explanation,buttonElement) {
     const feedbackDiv = document.querySelector("#feedback");
+    if(userAnswer===correctAnswer) {
+    }
 
 }
 
