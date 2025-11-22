@@ -14,10 +14,7 @@ function checkAnswer(userAnswer,correctAnswer,explanation,buttonElement) {
         feedbackDiv.innerHTML = "<div class='alert alert-danger mt-3'><strong>Mauvaise réponse !</strong><br>La bonne réponse était : "+correctAnswer+"<br>Explication : "+explanation+"</div>";
     }
 }
-
-let currentIndex = 0;
-let indexButton = 0;
-let questions = [];
+//fetch les question de questions.json Author:Rayan Chattaoui je l'ai mis en bas il a pas était appeller je le mets en haut
 function fetchjsonQuestions(){
     fetch('questions.json')
     .then(response => response.json())
@@ -28,6 +25,10 @@ function fetchjsonQuestions(){
     .catch(error => console.error('Erreur lors du chargement des questions :', error));
 }
 fetchjsonQuestions();
+let currentIndex = 0;
+let indexButton = 0;
+let questions = [];
+
 
 function viewquestion(){
 
