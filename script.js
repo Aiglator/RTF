@@ -18,11 +18,7 @@ function checkAnswer(userAnswer,correctAnswer,explanation,buttonElement) {
 let currentIndex = 0;
 let indexButton = 0;
 
-function viewquestion(){
-
-
-//affiche les questions une par une en mode aléatoire {
-    const questions = [
+const questions = [
         {
             question: "Quelle est la capitale de la France ?",
             choices: ["Berlin", "Madrid", "Paris", "Rome"],
@@ -123,7 +119,12 @@ function viewquestion(){
         choices: ["New York", "Londres", "Paris", "Tokyo"],
         answer: "Paris"
     }
-    ];
+];
+
+function viewquestion(){
+
+
+//affiche les questions une par une en mode aléatoire {
     questions.forEach(element => {
         console.log(element.question);
         element.choices.forEach(choice => {
