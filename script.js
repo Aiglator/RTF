@@ -8,6 +8,7 @@ function checkAnswer(userAnswer,correctAnswer,explanation,buttonElement) {
         buttonElement.classList.remove("btn-outline-primary");
         buttonElement.classList.add("btn-success");
         feedbackDiv.innerHTML = "";
+        score ++;
     }else {
         buttonElement.classList.remove("btn-outline-primary");
         buttonElement.classList.add("btn-danger");
@@ -29,6 +30,7 @@ fetchjsonQuestions();
 let currentIndex = 0;
 let indexButton = 0;
 let questions = [];
+let score = 0;
 
 function changeNumberOfQuestions(){
     const changenumberofQuestions = document.getElementById("changenumberofQuestions");
@@ -39,6 +41,38 @@ function bluechangequestion(){
     const progressPercentage = ((currentIndex)/questions.length)*100;
     bluechange.style.width= `${progressPercentage}%`;
 }
+function showResultInline() {
+  document.getElementById('popup-score').textContent = `Score : ${score} / ${questions.length}`;
+  document.getElementById('popup-result').classList.remove('d-none');
+}
+
+document.getElementById('popup-send').onclick = () => {
+  const name = document.getElementById('player-name').value.trim();
+  if (!name) {
+    alert('Merci de saisir votre nom.');
+    return;
+  }
+  sendToEducentre({ name, score, total: questions.length });
+};
+
+document.getElementById('popup-close').onclick = () => {
+  document.getElementById('popup-result').classList.add('d-none');
+};
+
+document.getElementById('popup-next').onclick = () => {
+  document.getElementById('popup-result').classList.add('d-none');
+  if (currentIndex < questions.length) viewquestion();
+};
+
+// …dans ton setTimeout après checkAnswer :
+if (currentIndex < questions.length) {
+  viewquestion();
+} else {
+  showResultInline();
+}
+
+
+
 function viewquestion(){
 
 const button = document.querySelectorAll("button[data-value]");
@@ -48,6 +82,7 @@ document.querySelector("#feedback").innerHTML = "";
 indexButton = 0;
 changeNumberOfQuestions();
 bluechangequestion();
+
 // Connections pour redémarrer le timer à chaque nouvelle question feature: Rayan Chattaoui j'ai fait ceci pour connecter les deux fichiers
 if (typeof startTimer === 'function') {
     startTimer();
@@ -70,6 +105,10 @@ element.choices.forEach(choice => {
             currentIndex++;
             if(currentIndex < questions.length) {
                 viewquestion();
+            }else {
+                showResultInline();
+        
+
             }
         }, 2000);
     };

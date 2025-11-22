@@ -74,6 +74,21 @@
 
   </div>
 </div>
+<div id="popup-result" class="position-fixed top-0 start-0 w-100 h-100 d-none"
+     style="background: rgba(0,0,0,0.25); z-index: 1050;">
+  <div class="bg-white p-5 rounded-4 shadow-sm mx-auto mt-5" style="max-width: 900px;">
+    <span style="display:flex;justify-content:center;color:#1ec41e;font-size:50px;">&#10003;</span>
+    <h3 class="text-center mb-5" id="popup-title">Bonne réponse !</h3>
+    <h2 class="text-center mb-5" id="popup-score" style="color:#1ec41e;">+15 PTS</h2>
+    <div class="col-md-auto">
+      <button id="popup-next" type="button"
+              class="btn btn-outline-primary w-100 d-flex align-items-center p-3 gap-3 row justify-content-md-center">
+        Suivant
+      </button>
+    </div>
+  </div>
+</div>
+
   <script src="script.js"></script>
   <script src="minuteur.js"></script>
 </body>
