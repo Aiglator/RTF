@@ -11,7 +11,7 @@ function checkAnswer(userAnswer,correctAnswer,explanation,buttonElement) {
     }else {
         buttonElement.classList.remove("btn-outline-primary");
         buttonElement.classList.add("btn-danger");
-        feedbackDiv.innerHTML = "";
+        feedbackDiv.innerHTML = "<div class='alert alert-danger mt-3'></div>";
     }
 
 }
