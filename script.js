@@ -18,7 +18,16 @@ function checkAnswer(userAnswer,correctAnswer,explanation,buttonElement) {
 let currentIndex = 0;
 let indexButton = 0;
 let questions = [];
-
+function fetchjsonQuestions(){
+    fetch('questions.json')
+    .then(response => response.json())
+    .then(news => {
+        questions = news;
+        viewquestion();
+    })
+    .catch(error => console.error('Erreur lors du chargement des questions :', error));
+}
+fetchjsonQuestions();
 
 function viewquestion(){
 
@@ -58,12 +67,3 @@ element.choices.forEach(choice => {
 }
 viewquestion();
 
-function fetchjsonQuestions(){
-    fetch('questions.json')
-    .then(response => response.json())
-    .then(news => {
-        questions = news;
-        viewquestion();
-    })
-    .catch(error => console.error('Erreur lors du chargement des questions :', error));
-}
