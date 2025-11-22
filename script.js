@@ -3,7 +3,8 @@
 //timer avec compte à rebours
 // AUthor: Rayan et Thomas CheckAnswer peer to peer programming
 function checkAnswer(userAnswer,correctAnswer,explanation,buttonElement) {
-    
+    const feedbackDiv = document.querySelector("#feedback");
+
 }
 
 function viewquestion(){
