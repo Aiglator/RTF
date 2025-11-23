@@ -164,6 +164,7 @@ Dans [minuteur.js](minuteur.js#L24), changez la valeur de `setInterval` :
 
 - `main` : Branche principale stable
 - `Rayan` : Branche de développement active
+- `Thomas` : code de Thomas
 - `backend` : Développement backend
 - `score` : Fonctionnalités de scoring
 - `code-de-fabrice` : Contributions de Fabrice
