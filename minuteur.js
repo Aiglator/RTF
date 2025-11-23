@@ -5,7 +5,7 @@ let timerInterval;
 function startTimer() {
   clearInterval(timerInterval);
  
-  timeLeft = 20;
+  timeLeft = 30;
   updateTimerDisplay();
  
   timerInterval = setInterval(() => {
@@ -21,7 +21,7 @@ function startTimer() {
           viewquestion();
       }
     }
-  }, 1000);
+  }, 2000);
 }
 
 function updateTimerDisplay() {
