@@ -41,27 +41,55 @@ function bluechangequestion(){
     const progressPercentage = ((currentIndex)/questions.length)*100;
     bluechange.style.width= `${progressPercentage}%`;
 }
+
+// Partit scoring Educentre
 function showResultInline() {
   document.getElementById('popup-score').textContent = `Score : ${score} / ${questions.length}`;
   document.getElementById('popup-result').classList.remove('d-none');
 }
 
+function sendScoreToEducentre(studentName) {
+  try {
+    const edac = new EducentreActivity();
+    const normalisedScore = score / questions.length;
+
+    // Envoyer le score à Educentre avec un callback (OBLIGATOIRE)
+    edac.sendScore(normalisedScore, (response) => {
+      console.log('Réponse Educentre après envoi du score:', response);
+    });
+
+    // Sauvegarder les données de l'étudiant
+    edac.saveStorage({
+      studentName: studentName,
+      score: score,
+      total: questions.length,
+      normalizedScore: normalisedScore,
+      date: new Date().toISOString()
+    }, (response) => {
+      console.log('Données sauvegardées:', response);
+    });
+
+    console.log(`Score envoyé à Educentre: ${normalisedScore} (${score}/${questions.length}) par ${studentName}`);
+    alert('Score envoyé avec succès à Educentre !');
+  } catch (error) {
+    console.error('Problème lors de l\'envoi du score à Educentre:', error);
+    alert('Erreur lors de l\'envoi. Vérifiez la console.');
+  }
+}
+
+// Bouton pour envoyer le score
 document.getElementById('popup-send').onclick = () => {
-  const name = document.getElementById('player-name').value.trim();
-  if (!name) {
-    alert('Merci de saisir votre nom.');
+  const studentName = document.getElementById('student-name').value.trim();
+  if (!studentName) {
+    alert('Veuillez entrer votre nom et prénom.');
     return;
   }
-  sendToEducentre({ name, score, total: questions.length });
+  sendScoreToEducentre(studentName);
 };
 
-document.getElementById('popup-close').onclick = () => {
-  document.getElementById('popup-result').classList.add('d-none');
-};
-
+// Bouton pour fermer le popup
 document.getElementById('popup-next').onclick = () => {
   document.getElementById('popup-result').classList.add('d-none');
-  if (currentIndex < questions.length) viewquestion();
 };
 
 // …dans ton setTimeout après checkAnswer :
@@ -107,7 +135,7 @@ element.choices.forEach(choice => {
                 viewquestion();
             }else {
                 showResultInline();
-        
+
 
             }
         }, 2000);
@@ -116,5 +144,3 @@ element.choices.forEach(choice => {
 });
 
 }
-
-
