@@ -160,10 +160,6 @@ Dans [minuteur.js](minuteur.js#L24), changez la valeur de `setInterval` :
 }, 2000); // Temps en millisecondes (2000ms = 2 secondes)
 ```
 
-
-
-
-
 ## Branches Git
 
 - `main` : Branche principale stable
