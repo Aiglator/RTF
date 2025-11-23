@@ -162,8 +162,10 @@ Dans [minuteur.js](minuteur.js#L24), changez la valeur de `setInterval` :
 
 ## Contributeurs
 
-- **Rayan Chattaoui** : Développement principal, intégration Educentre, système de timer
+- **Rayan Chattaoui** : intégration et interconnection timer affichage popup et affichage questions, intégration Educentre, 
 - **Thomas** : Pair programming sur la fonction `checkAnswer`
+-**Fabrice** : intégration timer
+
 
 ## Branches Git
 
