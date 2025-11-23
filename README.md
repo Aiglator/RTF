@@ -160,11 +160,6 @@ Dans [minuteur.js](minuteur.js#L24), changez la valeur de `setInterval` :
 }, 2000); // Temps en millisecondes (2000ms = 2 secondes)
 ```
 
-## Contributeurs
-
-- **Rayan Chattaoui** : Développement principal, intégration Educentre, système de timer
-- **Thomas** : Pair programming sur la fonction `checkAnswer`
-
 ## Branches Git
 
 - `main` : Branche principale stable
